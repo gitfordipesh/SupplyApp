@@ -5,9 +5,14 @@
   
   <%= render 'accounts/account', accounts:@account %> 
   <br>
-  <button type="button" class="btn btn-secondary">
-  <%= link_to "Add Account", new_supplier_account_path(@supplier),:class => "text-light" %>
-  </button>
+  <% if defined?(@account.id) %>
+    <%= " "%>
+  <% else %>
+    <button type="button" class="btn btn-secondary">
+      <%= link_to "Add Account", new_supplier_account_path(@supplier),:class => "text-light" %>
+    </button>
+  <%end%>
+
   </div>
 
   <button type="button" class="btn btn-secondary">
