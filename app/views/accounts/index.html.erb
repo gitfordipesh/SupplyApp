@@ -10,11 +10,19 @@
         <th scope="col">Show.</th>
       </tr>
     </thead>
+    <% a = defined?(@account.id) ? @account.id : 0 %>
+    <% b = defined?(@account.accNo) ? @account.accNo : 0  %>
     <tbody>
       <tr>
-        <td><%= @account.id %></td>
-        <td><%= @account.accNo %></td>
-        <td><%= link_to "Show", supplier_account_path(id: @account.id,supplier_id: @account.supplier_id) %></td>    
+        <td><%= a %></td>
+        <td><%= b %></td>
+        <td>
+        <% if a!=0 %>
+        <%= link_to "Show", supplier_account_path(id: a,supplier_id: @account.supplier_id)%>
+        <% else %>
+        <%= "Cannot Show"%>
+        <%end%>
+        </td>    
     </tr>
     </tbody>
 </table>
