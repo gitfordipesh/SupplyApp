@@ -1,0 +1,19 @@
+<h1>Account Show</h1>
+<div class="jumbotron">
+  <h1 class="display-4 text-center"><%= @account.accNo %></h1>
+  <h1 class="display-4 text-center"><%= @supplier.name %></h1> 
+  <h6>Created at : <%= @account.created_at %></h1>
+  <h6>Updated at : <%= @account.updated_at %></h1>
+    <br>
+    <br>
+  <button class="btn btn-secondary">
+  <%= link_to "Back", supplier_path(@account.supplier),:class => "text-light"%>
+  </button>  
+  <button class="btn btn-secondary">
+  <%= link_to "Edit Account Number", edit_supplier_account_path(@account),:class => "text-light"%>
+  </button>  
+ 
+  <button class="btn btn-danger">
+  <%= link_to "Delete Account", supplier_account_path(@account),:class => "text-light", data:{method: :delete, confirm: "Are you Sure?"}%>
+  </button>
+</div>

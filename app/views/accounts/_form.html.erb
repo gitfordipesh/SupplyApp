@@ -1,0 +1,9 @@
+<%= form_with model: [ @supplier, @supplier.accounts.build ] do |form| %>
+  <p>
+    <%= form.label :Account_No %><br>
+    <%= form.text_field :Account_No%>
+  </p>
+  <p>
+    <%= form.submit class:"btn btn-secondary"%>
+  </p>
+<% end %>

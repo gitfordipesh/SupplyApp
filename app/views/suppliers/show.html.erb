@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @supplier.name %> <%= @supplier.city%></h1>
+  <p class="lead">This is <%= @supplier.name%> Profile </p>
+  <div class="jumbotron">
+  
+  <a href ="/suppliers/<%=@supplier.id%>/accounts">View Account</a>
+    
+  <br>
+  <button type="button" class="btn btn-secondary">
+  <%= link_to "Add Account", new_supplier_account_path(@supplier),:class => "text-light" %>
+  </button>
+  </div>
+
+  <button type="button" class="btn btn-secondary">
+  <%= link_to "Back", suppliers_path ,:class => "text-light"%>
+  </button>  
+  <button type="button" class="btn btn-secondary">
+  <%= link_to "Edit Profile", edit_supplier_path(@supplier),:class => "text-light"%>
+  </button>  
+  <button type="button" class="btn btn-danger">
+  <%= link_to "Delete Profile", supplier_path(@supplier), data:{method: :delete, confirm: "Are you Sure?"},:class => "text-light"%>
+  </button>
+</div>
