@@ -7,8 +7,8 @@ class AccountsController < ApplicationController
   
   def show
     @account = Account.find(params[:id])
-    @supplier = Supplier.find(params[:supplier_id])
-  end
+    # @supplier = Supplier.find(params[:supplier_id])
+   end
   
   def allshow
     @accounts = Account.all
