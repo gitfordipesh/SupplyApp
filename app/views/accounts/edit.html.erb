@@ -1,16 +1,11 @@
 <h1>Edit Account Information</h1>
 
-<div class = "jumbotron">
-<%= form_with(model: @account, url: supplier_accounts_path) do |form| %>
-<div class="form-group">
+<%= form_with(model: @account, url: supplier_account_path) do |form| %>
   <p>
-    <%= form.label :Account_no %><br>
-    <%= form.text_field :accNo , class:"form-control" %>
-  </p>  
-
+    <%= form.label :Account_No %><br>
+    <%= form.text_field :accNo %>
+  </p>
   <p>
     <%= form.submit class:"btn btn-secondary"%>
   </p>
-</div>
 <% end %>
-</div>
