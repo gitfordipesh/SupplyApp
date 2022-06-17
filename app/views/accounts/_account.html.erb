@@ -7,7 +7,8 @@
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Account No.</th>
-        <th scope="col">Show.</th>
+        <th scope="col">View Info.</th>
+        <th scope="col">Update Info.</th>
       </tr>
     </thead>
     <% a = defined?(@account.id) ? @account.id : 0 %>
@@ -20,7 +21,14 @@
         <% if a!=0 %>
         <%= link_to "Show", supplier_account_path(id: a,supplier_id: @account.supplier_id)%>
         <% else %>
-        <%= "Cannot Show"%>
+          <%= "Cannot Show"%>
+        <%end%>
+        </td>
+        <td>
+        <% if a!=0%>
+          <%= link_to "Edit Account Number", edit_supplier_account_path(id: a,supplier_id: @account.supplier_id)%> 
+        <% else %>
+          <%= "Add Account To Edit."%>    
         <%end%>
         </td>    
     </tr>
